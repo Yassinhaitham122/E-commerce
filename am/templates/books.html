@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AM Bookstore - Books</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  
+<body>
+    <header>
+        <h1>AM Bookstore</h1>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('books_bp.show_books') }}">Books</a>
+            <a href="{{ url_for('auth_bp.logout') }}">About</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Available Books</h2>
+        <ul>
+            {% for book in books %}
+            
+                <li>
+                    <h3>{{ book.title }}</h3>
+                    <p>Author: {{ book.author }}</p>
+                    <p>Price: ${{ book.price }}</p>
+                    
+                </li>
+                <img src="{{ book.imageUrl }}" alt="{{ book.title }} cover" width="150">
+                    <p>{{ book.description }}</p>
+                    <a href="#" class="btn">Buy Now</a>
+            {% endfor %}
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2024 AM Bookstore. All rights reserved.</p>
+    </footer>
+    
+</body>
+</html>
