@@ -1,0 +1,40 @@
+ .login-page {
+    right: 0;
+    color: #fff;
+    border-radius: 0 20px 20px 0;
+    transform-origin:left center;
+    transition: -Webkit-animation 1s linear;
+    transition: animation 1s linear;
+    transition: animation 1s linear,
+    }
+
+    @keyframes rot-front {
+        from {
+            transform: translateZ(2px) rotateY(0deg);
+        }
+        to {
+            transform: translateZ(1px) rotateY(-180deg);
+        
+        }
+    }
+    
+    
+
+.auth-form {
+  background: #ce6510f1;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}    
+
+
+.page-wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;   /* أفقي */
+    align-items: center;       /* رأسي */
+    background: #111;
+}
