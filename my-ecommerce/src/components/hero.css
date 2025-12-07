@@ -1,0 +1,102 @@
+.hero {
+  width: 100%;
+  height: 80vh;
+  min-height: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #8b0000 0%, #5a0000 60%);
+  color:white;
+  overflow: visible; /* بدل hidden */
+  position: relative;
+  padding-top: 0;
+  margin-bottom: 0;
+}
+
+
+.hero-inner {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+.hero-left {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.hero-title {
+  font-size: clamp(28px, 4vw, 48px);
+  margin: 0 0 10px 0;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: #f8e7ff; /* عنبي خفيف */
+}
+
+.hero-sub {
+  opacity: 0.9;
+  margin-bottom: 18px;
+  max-width: 480px;
+}
+
+/* زرار شوب ناو */
+.hero-cta {
+  display: inline-block;
+  background: linear-gradient(90deg, #ff8a00, #ff4d00);
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  transition: transform .16s ease, box-shadow .16s ease;
+}
+.hero-cta:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(0,0,0,0.45); }
+
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shoe-wrap{
+  width: min(420px, 42vw);
+  height: min(420px, 42vw);
+  display: grid;
+  place-items: center;
+  perspective: 1400px;
+}
+
+.shoe {
+  width: 85%;
+  height: auto;
+  transform-origin: center center;
+  animation: spinSlow 9s linear infinite;
+  will-change: transform;
+  border-radius: 10px;
+  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+}
+
+@keyframes spinSlow {
+  from { transform: rotateY(0deg); }
+  to   { transform: rotateY(360deg); }
+}
+
+/* Responsive: when screen is small, stack vertically */
+@media (max-width: 900px) {
+  .hero-inner { flex-direction: column-reverse; gap: 18px; padding: 16px; }
+  .hero-right, .hero-left { width: 100%; text-align: center; }
+  .hero-left { padding-left: 0; }
+}
+
+
+
+

@@ -1,0 +1,136 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  background: #2c2c2c; /* خلفية رصاصي غامق */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Wrapper للكتاب */
+.book-wrapper {
+  width: 400px;
+  height: 520px;
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* الكتاب */
+.book {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+/* الوجهين */
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #f0f0f0; /* خلفية رصاصي فاتح */
+  color: #333;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 30px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  gap: 20px;
+}
+/* الوجه الخلفي */
+.page-back {
+  transform: rotateY(180deg);
+}
+
+/* البوكس الصغير لكلمات SignIn / SignUp */
+.auth-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #4e2352;
+  align-self: flex-start; /* فوق على الشمال */
+}
+.page input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.page input:focus {
+  border-color: #4e2352;
+  box-shadow: 0 0 8px rgba(78,35,82,0.3);
+}
+/* الحقول */
+.auth-input {
+  width: 90%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.page button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  background: #4e2352;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.auth-input:focus {
+  border-color: #ff5e00;
+  box-shadow: 0 0 10px rgba(255,94,0,0.4);
+}
+
+
+/* الأزرار */
+.auth-button {
+  width: 95%;
+  padding: 12px 0;
+  background: #ff5e00;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.page button:hover {
+  background: #63306e;
+}
+
+.auth-button:hover {
+  background: #ff7e3c;
+}
+
+/* الأنيميشن */
+.book.flipped {
+  transform: rotateY(180deg);
+}
+.page p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #4e2352;
+  cursor: pointer;
+  text-decoration: underline;
+}
