@@ -145,3 +145,16 @@ def create_order_from_cart(session: Session, user_id: int) -> models.Order:
     session.commit()
     session.refresh(order)
     return order
+
+
+def create_review(session: Session, review: models.Review) ->models.Review:
+    session.add(review)
+    session.commit()
+    session.refresh(review)
+    return review    
+
+
+def get_product_reviews(session: Session, product_id: int) -> List[models.Review]:
+    return session.exec(
+        select(models.Review).where(models.Review.product_id == product_id)
+    ).all()

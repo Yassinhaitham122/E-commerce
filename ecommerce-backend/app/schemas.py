@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from pydantic import BaseModel, EmailStr
 from typing import Optional, List
 
@@ -70,3 +72,23 @@ class OrderItemCreate(BaseModel):
 
 class OrderCreate(BaseModel):
     items: List[OrderItemCreate]
+
+###########  Reviews #############
+
+class ReviewCreate(BaseModel):
+    product_id: int
+    rating: int
+    comment: Optional[str] = None
+
+
+
+class ReviewRead(BaseModel):
+    id: int
+    user_id: int
+    product_id: int
+    rating: int
+    comment: Optional[str]
+    created_at: datetime
+
+    class Config:
+        from_attributes = True

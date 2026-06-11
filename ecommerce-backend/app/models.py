@@ -59,3 +59,15 @@ class CartItem(SQLModel, table=True):
 
     cart: Cart = Relationship(back_populates="items")
     product: Product = Relationship(back_populates="cart_items")
+
+
+######### Reviews #########
+
+class Review(SQLModel,table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    user_id: Optional[int] = Field(default=None, foreign_key="user.id")
+    product_id: Optional[int] = Field(default=None, foreign_key="product.id")
+    rating: int  # من 1 لـ 5
+    comment: Optional[str] = None
+    created_at: datetime = Field(default_factory=datetime.utcnow)
+

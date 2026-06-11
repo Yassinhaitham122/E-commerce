@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.database import engine
 from sqlmodel import SQLModel
-from app.routers import auth, products, orders
+from app.routers import auth, products, orders,reviews
 from app import models
 from app.routers import users
 from app.core.exceptions import ExceptionHandlerMiddleware
@@ -33,6 +33,6 @@ app.include_router(auth.router)
 app.include_router(products.router)
 app.include_router(orders.router)
 app.include_router(users.router)
-
+app.include_router(reviews.router)
 
 
